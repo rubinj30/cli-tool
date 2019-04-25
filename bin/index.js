@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-const forge = require("../lib/forge.js");
-const fs = require('fs');
+const forge = require('../lib/forge')
 
 // TODO: find out why this is different and best way
 // const createStream = fs.createWriteStream('test.txt');
@@ -13,8 +12,11 @@ const fs = require('fs');
 
 // gets component name from command line argument
 const componentName = forge.uppercase(process.argv[2]);
+const test = async () => {
+    forge.createDirectory(componentName);
+    forge.createComponent(componentName)
+    forge.createTest(componentName)
+    forge.createSassFile(componentName)
+}
 
-fs.writeFile(`${componentName}.jsx`, forge.createComponent(componentName), function (err) {
-    if (err) throw err;
-    console.log(`${componentName} created successfully.`);
-});
+test();
