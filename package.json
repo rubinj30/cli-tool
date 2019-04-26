@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "main": "./lib/forge.js",
   "bin": {
-    "greet": "./bin/forge.js"
+    "forge": "./bin/index.js"
   },
-  "dependencies": {
-    "chokidar": "^2.1.5"
-  }
+  "dependencies": {}
 }
